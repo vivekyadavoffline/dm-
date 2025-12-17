@@ -1,0 +1,1060 @@
+/* =========================================================
+   PART 1 — CORE SYSTEM (EXTENDED & STABLE)
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   ROOT THEME VARIABLES
+   --------------------------------------------------------- */
+:root {
+  /* THEME COLORS */
+  --primary: #38bdf8;
+  --secondary: #818cf8;
+
+  --primary-soft: rgba(56,189,248,0.15);
+  --primary-border: rgba(56,189,248,0.4);
+  --primary-shadow: rgba(56,189,248,0.18);
+  --primary-glow: rgba(56,189,248,0.25);
+
+  --accent: #22c55e;
+  --danger: #ef4444;
+
+  /* Backgrounds */
+  --bg-main: #020617;
+  --bg-secondary: #0f172a;
+  --glass-bg: rgba(255, 255, 255, 0.07);
+
+  /* Text Colors */
+  --text-main: #e6edf3;
+  --text-muted: #9aa4b2;
+  --text-soft: #cbd5e1;
+
+  /* Radius */
+  --radius-xl: 22px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+
+  /* Effects */
+  --blur: blur(14px);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition: 0.35s ease;
+}
+
+
+/* ---------------------------------------------------------
+   RESET & BASE
+   --------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  color: var(--text-main);
+  line-height: 1.7;
+
+  background: linear-gradient(
+    -45deg,
+    #020617,
+    #020617,
+    #0f172a,
+    #020617
+  );
+  background-size: 400% 400%;
+  animation: gradientFlow 18s ease infinite;
+}
+
+/* ---------------------------------------------------------
+   BACKGROUND BASE ANIMATION (SUBTLE)
+   --------------------------------------------------------- */
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---------------------------------------------------------
+   HEADER (HERO AREA)
+   --------------------------------------------------------- */
+/* =========================================================
+   HEADER PATTERN LAYER (THEME-AWARE)
+   ========================================================= */
+
+/* =========================================================
+   MOVING HEADER PATTERN (ADVANCED)
+   ========================================================= */
+
+header {
+  
+    text-align: center;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    repeating-linear-gradient(
+      45deg,
+      var(--primary-soft) 0px,
+      var(--primary-soft) 1px,
+      transparent 1px,
+      transparent 14px
+    ),
+    radial-gradient(
+      circle at 30% 20%,
+      var(--primary-glow),
+      transparent 65%
+    );
+
+  opacity: 0.45;
+  animation: headerPatternMove 40s linear infinite;
+}
+
+/* ---------- SMOOTH DIAGONAL MOTION ---------- */
+@keyframes headerPatternMove {
+  0% {
+    background-position: 0 0, 30% 20%;
+  }
+  50% {
+    background-position: 200px 200px, 70% 40%;
+  }
+  100% {
+    background-position: 0 0, 30% 20%;
+  }
+}
+
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header p {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+/* ---------------------------------------------------------
+   NAVIGATION BAR
+   --------------------------------------------------------- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: linear-gradient(
+    180deg,
+    rgba(2,6,23,0.95),
+    rgba(2,6,23,0.85)
+  );
+
+  backdrop-filter: var(--blur);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4rem;
+
+  list-style: none;
+  padding: 1rem;
+}
+
+nav a {
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-md);
+
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background var(--transition),
+              color var(--transition);
+}
+
+nav a:hover {
+  background:  var(--primary),
+  color(srgb red green blue) whitesmoke;
+}
+
+/* ---------------------------------------------------------
+   MAIN CONTENT WRAPPER
+   --------------------------------------------------------- */
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2.8rem 1.4rem;
+}
+
+/* ---------------------------------------------------------
+   SECTION (UNIT)
+   --------------------------------------------------------- */
+section {
+  position: relative;
+  margin-bottom: 4.5rem;
+}
+
+section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.8rem;
+  padding-left: 1rem;
+
+  border-left: 5px solid var(--primary);
+
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    #a5b4fc
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------------------------------------------------------
+   ARTICLE / NOTE CARD
+   --------------------------------------------------------- */
+article {
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur);
+
+  border-radius: var(--radius-lg);
+  padding: 1.9rem;
+  margin-bottom: 1.9rem;
+
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+article h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: var(--primary);
+}
+
+article p {
+  margin-bottom: 0.6rem;
+  color: var(--text-main);
+}
+
+article ul {
+  margin-left: 1.4rem;
+  margin-top: 0.4rem;
+}
+
+article li {
+  margin-bottom: 0.45rem;
+  color: var(--text-soft);
+}
+
+/* ---------------------------------------------------------
+   CODE / FORMULA BLOCKS
+   --------------------------------------------------------- */
+pre {
+  background: rgba(2,6,23,0.85);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin-top: 0.8rem;
+
+  font-family: "Fira Code", monospace;
+  font-size: 0.95rem;
+  color: #22c55e;
+
+  border: 1px solid rgba(34,197,94,0.3);
+  overflow-x: auto;
+}
+
+/* ---------------------------------------------------------
+   SEARCH INPUT
+   --------------------------------------------------------- */
+.search-box {
+  margin-top: 1.2rem;
+  padding: 0.6rem 1rem;
+  width: 260px;
+
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,0.2);
+
+  background: rgba(2,6,23,0.85);
+  color: #ffffff;
+  outline: none;
+}
+
+.search-box::placeholder {
+  color: var(--text-muted);
+}
+
+/* ---------------------------------------------------------
+   FOOTER
+   --------------------------------------------------------- */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+
+  color: #cbd5f5;
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  background: linear-gradient(
+    180deg,
+    rgba(2,6,23,0.7),
+    rgba(2,6,23,0.95)
+  );
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE (MOBILE)
+   --------------------------------------------------------- */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  section h2 {
+    font-size: 1.7rem;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+
+  main {
+    padding: 2rem 1rem;
+  }
+}
+/* =========================================================
+   PART 2 — INTERACTIONS, EFFECTS & BACKGROUNDS (EXTENDED)
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   NAVIGATION MICRO-INTERACTION
+   --------------------------------------------------------- */
+nav a {
+  position: relative;
+  overflow: hidden;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  width: 0%;
+  height: 2px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary)
+  );
+  transform: translateX(-50%);
+  transition: width 0.4s ease;
+}
+
+nav a:hover::after {
+  width: 70%;
+}
+
+/* ---------------------------------------------------------
+   ARTICLE HOVER (SINGLE SOURCE OF TRUTH)
+   --------------------------------------------------------- */
+article {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+article:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: var(--primary-border);
+  box-shadow: 0 18px 36px var(--primary-shadow);
+}
+
+
+/* ---------------------------------------------------------
+   ARTICLE BORDER GLOW (CONTROLLED)
+   --------------------------------------------------------- */
+article::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    var(--primary),
+    rgba(129,140,248,0.6),
+    transparent
+  );
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+article:hover::before {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------
+   ARTICLE TITLE SLIDE
+   --------------------------------------------------------- */
+article h3 {
+  transition: transform 0.35s ease;
+}
+
+article:hover h3 {
+  transform: translateX(6px);
+}
+
+/* ---------------------------------------------------------
+   LIST ITEM MICRO-INTERACTION
+   --------------------------------------------------------- */
+article li {
+  position: relative;
+  padding-left: 14px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+article li::before {
+  content: "➤";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+article li:hover {
+  color: #ffffff;
+  transform: translateX(6px);
+}
+
+article li:hover::before {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------
+   SECTION DEPTH GLOW (NO BANDING)
+   --------------------------------------------------------- */
+section::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: var(--radius-xl);
+  background: radial-gradient(
+    circle at top,
+   
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: -1;
+}
+
+section:hover::before {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------
+   GLOBAL BACKGROUND LAYERS (SAFE)
+   --------------------------------------------------------- */
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* --- Soft Radial Glow --- */
+body::before {
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(56,189,248,0.08),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(129,140,248,0.08),
+      transparent 40%
+    );
+  animation: bgGlowMove 20s linear infinite;
+}
+
+/* --- Subtle Grid Texture --- */
+body::after {
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px
+    );
+  background-size: 80px 80px;
+  opacity: 0.18;
+}
+
+/* ---------------------------------------------------------
+   BACKGROUND GLOW MOTION
+   --------------------------------------------------------- */
+@keyframes bgGlowMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-40px, 30px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* ---------------------------------------------------------
+   CODE BLOCK HOVER (FOCUS FEEDBACK)
+   --------------------------------------------------------- */
+pre {
+  transition: box-shadow 0.35s ease;
+}
+
+pre:hover {
+  box-shadow:
+    inset 0 0 20px rgba(34,197,94,0.25),
+    0 0 24px rgba(34,197,94,0.35);
+}
+
+/* ---------------------------------------------------------
+   IMAGE HOVER (FOR FUTURE DIAGRAMS)
+   --------------------------------------------------------- */
+img {
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* ---------------------------------------------------------
+   TEXT SELECTION
+   --------------------------------------------------------- */
+::selection {
+  background: rgba(96,165,250,0.35);
+  color: #ffffff;
+}
+
+/* ---------------------------------------------------------
+   CURSOR FEEDBACK
+   --------------------------------------------------------- */
+a,
+button,
+article,
+li {
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------
+   ACCESSIBILITY — REDUCED MOTION
+   --------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* =========================================================
+   PART 3 — ADVANCED MODES & UTILITIES
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   EXAM / READING MODE
+   (Can be toggled via JS by adding class "exam-mode" to body)
+   --------------------------------------------------------- */
+body.exam-mode {
+  background: #020617;
+  animation: none;
+}
+
+body.exam-mode header,
+body.exam-mode nav,
+body.exam-mode section::before,
+body.exam-mode article::before,
+body.exam-mode body::before,
+body.exam-mode body::after {
+  display: none !important;
+}
+
+body.exam-mode article {
+  background: #020617;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: none;
+}
+
+body.exam-mode article h3 {
+  color: #e5e7eb;
+}
+
+body.exam-mode article p,
+body.exam-mode article li {
+  color: #f1f5f9;
+}
+
+/* ---------------------------------------------------------
+   LIGHT / PAPER MODE
+   (Toggle via JS: body.classList.toggle("light-mode"))
+   --------------------------------------------------------- */
+body.light-mode {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+body.light-mode header,
+body.light-mode nav,
+body.light-mode footer {
+  background: #ffffff;
+  border-color: #e5e7eb;
+}
+
+body.light-mode section h2 {
+  background: none;
+  -webkit-text-fill-color: #0f172a;
+}
+
+body.light-mode article {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+body.light-mode article h3 {
+  color: #2563eb;
+}
+
+body.light-mode article p,
+body.light-mode article li {
+  color: #1e293b;
+}
+
+body.light-mode pre {
+  background: #f1f5f9;
+  color: #166534;
+}
+
+/* ---------------------------------------------------------
+   FOCUS MODE (DIM OTHERS)
+   Add class "focus" to an article via JS
+   --------------------------------------------------------- */
+article.focus {
+  transform: scale(1.02);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+  border-color: var(--primary);
+  z-index: 5;
+}
+
+article.focus ~ article {
+  opacity: 0.4;
+  filter: blur(1px);
+}
+
+/* ---------------------------------------------------------
+   PRINT / PDF MODE
+   --------------------------------------------------------- */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    animation: none !important;
+  }
+
+  header,
+  nav,
+  footer {
+    display: none !important;
+  }
+
+  article {
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+
+  section {
+    page-break-before: always;
+  }
+
+  pre {
+    background: #f3f4f6 !important;
+    color: #000000 !important;
+  }
+}
+
+/* ---------------------------------------------------------
+   SCROLLBAR STYLING
+   --------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.04);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--primary),
+    var(--secondary)
+  );
+  border-radius: 20px;
+}
+
+/* ---------------------------------------------------------
+   UTILITY CLASSES (FOR JS / REACT)
+   --------------------------------------------------------- */
+.hidden {
+  display: none !important;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------------------------------
+   PERFORMANCE OPTIMIZATION
+   --------------------------------------------------------- */
+article,
+section,
+nav {
+  will-change: transform, opacity;
+}
+/* =========================================================
+   HEADER CONTROLS (OPTIONAL UI BUTTONS)
+   ========================================================= */
+
+.controls {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.controls button {
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  color: var(--text-main);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 999px;
+
+  backdrop-filter: var(--blur);
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* ---------- HOVER ---------- */
+.controls button:hover {
+  background: rgba(56,189,248,0.25);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(56,189,248,0.35);
+}
+
+/* ---------- ACTIVE (CLICK FEEDBACK) ---------- */
+.controls button:active {
+  transform: scale(0.96);
+}
+
+/* ---------- FOCUS (ACCESSIBILITY) ---------- */
+.controls button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(56,189,248,0.5);
+}
+
+/* ---------- MOBILE FRIENDLY ---------- */
+@media (max-width: 768px) {
+  .controls {
+    gap: 0.6rem;
+  }
+
+  .controls button {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.9rem;
+  }
+}
+/* =========================================================
+   SMART THEME / MODE BUTTON SYSTEM
+   ========================================================= */
+
+/* ---------- BASE BUTTON ---------- */
+.controls button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate; /* keeps glow inside */
+}
+
+/* ---------- GRADIENT SWEEP ANIMATION ---------- */
+.controls button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+  z-index: -1;
+}
+
+.controls button:hover::before {
+  transform: translateX(120%);
+}
+
+/* ---------- ACTIVE STATE (ON) ---------- */
+/* JS should toggle class="active" */
+.controls button.active {
+  background: linear-gradient(
+    135deg,
+    rgba(56,189,248,0.35),
+    rgba(129,140,248,0.35)
+  );
+  color: #ffffff;
+  border-color: rgba(56,189,248,0.6);
+  box-shadow:
+    0 0 0 1px rgba(56,189,248,0.4),
+    0 0 20px rgba(56,189,248,0.6);
+}
+
+/* ---------- ACTIVE PULSE (SUBTLE) ---------- */
+.controls button.active::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(
+    circle,
+    rgba(56,189,248,0.35),
+    transparent 60%
+  );
+  animation: pulseGlow 2.5s ease-in-out infinite;
+  z-index: -2;
+}
+
+@keyframes pulseGlow {
+  0%   { transform: scale(0.8); opacity: 0.6; }
+  50%  { transform: scale(1);   opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0.6; }
+}
+
+/* ---------- TOOLTIP ---------- */
+.controls button[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -38px;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+
+  background: rgba(2,6,23,0.95);
+  color: #ffffff;
+  font-size: 0.7rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.controls button:hover[data-tooltip]::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ---------- ICON SUPPORT (OPTIONAL) ---------- */
+.controls button span.icon {
+  margin-right: 0.35rem;
+  opacity: 0.9;
+}
+
+/* ---------- MODE-SPECIFIC COLORS ---------- */
+.controls button.theme-btn.active {
+  --primary: #38bdf8;
+}
+
+.controls button.exam-btn.active {
+  background: linear-gradient(
+    135deg,
+    rgba(34,197,94,0.35),
+    rgba(16,185,129,0.35)
+  );
+  border-color: rgba(34,197,94,0.6);
+  box-shadow: 0 0 20px rgba(34,197,94,0.6);
+}
+
+.controls button.light-btn.active {
+  background: linear-gradient(
+    135deg,
+    rgba(251,191,36,0.4),
+    rgba(250,204,21,0.4)
+  );
+  border-color: rgba(251,191,36,0.6);
+  box-shadow: 0 0 20px rgba(251,191,36,0.6);
+}
+
+/* ---------- DISABLED STATE ---------- */
+.controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ---------- MOBILE UX ---------- */
+@media (max-width: 768px) {
+  .controls button[data-tooltip]::after {
+    display: none; /* tooltips off on mobile */
+  }
+}
+/* =========================================================
+   EXTRA PREMIUM HOVER EFFECTS
+   ========================================================= */
+
+/* ---------- ARTICLE: INNER GLOW + DEPTH ---------- */
+article:hover {
+  box-shadow:
+    0 18px 36px var(--primary-shadow),
+    inset 0 0 20px var(--primary-glow);
+}
+
+/* ---------- ARTICLE: CORNER HIGHLIGHT ---------- */
+article::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    transparent 60%,
+    var(--primary-soft)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+article:hover::after {
+  opacity: 1;
+}
+
+/* ---------- SECTION TITLE: WAVE UNDERLINE ---------- */
+section h2::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 4px;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary)
+  );
+  transition: width 0.4s ease;
+}
+
+section:hover h2::before {
+  width: 120px;
+}
+
+/* ---------- NAV LINK: MAGNET EFFECT ---------- */
+nav a:hover {
+  letter-spacing: 1px;
+  transform: translateY(-1px);
+}
+
+/* ---------- BUTTON: GLOW RING ---------- */
+.controls button:hover {
+  box-shadow:
+    0 0 0 2px var(--primary-border),
+    0 0 18px var(--primary-glow);
+}
+
+/* ---------- LIST ITEM: DOT MORPH ---------- */
+article li::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+  transform: translateY(-50%) scale(0);
+  transition: transform 0.3s ease;
+}
+
+article li:hover::after {
+  transform: translateY(-50%) scale(1);
+}
+
+/* ---------- CODE BLOCK: NEON EDGE ---------- */
+pre:hover {
+  outline: 1px solid var(--primary-border);
+}

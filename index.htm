@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discrete Mathematics Notes</title>
+
+    <!-- CSS will be linked later -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+ <header>
+  <h1>Discrete Mathematics</h1>
+  <p>B.Tech CSE – Complete Notes by Vivek Yadav</p>
+
+</header>
+<div class="controls">
+  <button id="themeBtn" class="theme-btn" data-tooltip="Change theme">
+    Theme
+  </button>
+  <button id="examBtn" class="exam-btn" data-tooltip="Exam mode">
+    Exam
+  </button>
+  <button id="lightBtn" class="light-btn" data-tooltip="Light mode">
+    Light
+  </button>
+</div>
+
+
+
+    <!-- ================= NAVIGATION ================= -->
+    <nav>
+        <ul>
+            <li><a href="#unit1">Unit I</a></li>
+            <li><a href="#unit2">Unit II</a></li>
+            <li><a href="#unit3">Unit III</a></li>
+            <li><a href="#unit4">Unit IV</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main>
+
+        <!-- ========== UNIT I ========== -->
+        <!-- ========== UNIT I ========== -->
+<section id="unit1">
+    <h2>UNIT I: Sets, Logic and Relations</h2>
+
+    <article>
+        <h3>1. Sets</h3>
+
+        <p><b>Definition:</b>  
+        A set is a well-defined collection of distinct objects, called elements.</p>
+
+        <p><b>Example:</b>  
+        A = {1, 2, 3}</p>
+
+        <p><b>Subset:</b>  
+        A set A is a subset of B if every element of A is also an element of B.  
+        Symbolically, A ⊆ B.</p>
+
+        <p><b>Power Set:</b>  
+        The power set of a set A is the set of all possible subsets of A.  
+        If A has n elements, then P(A) has 2ⁿ elements.</p>
+
+        <p><b>Operations on Sets:</b></p>
+        <ul>
+            <li><b>Union:</b> A ∪ B = {x | x ∈ A or x ∈ B}</li>
+            <li><b>Intersection:</b> A ∩ B = {x | x ∈ A and x ∈ B}</li>
+            <li><b>Difference:</b> A − B = {x | x ∈ A and x ∉ B}</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>2. Propositional Logic</h3>
+
+        <p><b>Proposition:</b>  
+        A proposition is a statement that is either true (T) or false (F), but not both.</p>
+
+        <p><b>Logical Connectives:</b></p>
+        <ul>
+            <li>¬p : Negation (NOT)</li>
+            <li>p ∧ q : Conjunction (AND)</li>
+            <li>p ∨ q : Disjunction (OR)</li>
+            <li>p → q : Implication</li>
+            <li>p ↔ q : Biconditional</li>
+        </ul>
+
+        <p><b>Truth Table (Implication):</b></p>
+        <pre>
+p   q   p → q
+T   T     T
+T   F     F
+F   T     T
+F   F     T
+        </pre>
+
+        <p><b>Rules of Inference:</b></p>
+        <ul>
+            <li><b>Modus Ponens:</b> If p → q and p is true, then q is true.</li>
+            <li><b>Modus Tollens:</b> If p → q and q is false, then p is false.</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>3. Predicate Logic</h3>
+
+        <p><b>Predicate:</b>  
+        A predicate is a statement containing variables, which becomes a proposition when values are assigned.</p>
+
+        <p><b>Example:</b>  
+        P(x): x > 5</p>
+
+        <p><b>Quantifiers:</b></p>
+        <ul>
+            <li><b>Universal Quantifier (∀):</b> For all</li>
+            <li><b>Existential Quantifier (∃):</b> There exists</li>
+        </ul>
+
+        <p><b>Validity:</b>  
+        An argument is valid if the conclusion logically follows from the premises.</p>
+
+        <p><b>Normal Forms:</b></p>
+        <ul>
+            <li><b>CNF:</b> Conjunction of disjunctions</li>
+            <li><b>DNF:</b> Disjunction of conjunctions</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>4. Proof Techniques</h3>
+
+        <p><b>Direct Proof:</b>  
+        Assume the hypothesis is true and logically derive the conclusion.</p>
+
+        <p><b>Proof by Contraposition:</b>  
+        To prove p → q, prove ¬q → ¬p.</p>
+
+        <p><b>Proof by Contradiction:</b>  
+        Assume the statement is false and reach a contradiction.</p>
+    </article>
+
+    <article>
+        <h3>5. Counting Principles</h3>
+
+        <p><b>Principle of Inclusion and Exclusion:</b></p>
+        <p>
+        n(A ∪ B) = n(A) + n(B) − n(A ∩ B)
+        </p>
+
+        <p><b>Pigeonhole Principle:</b>  
+        If n+1 objects are placed into n boxes, at least one box contains more than one object.</p>
+
+        <p><b>Permutation:</b></p>
+        <p>nPr = n! / (n − r)!</p>
+
+        <p><b>Combination:</b></p>
+        <p>nCr = n! / [r!(n − r)!]</p>
+    </article>
+
+    <article>
+        <h3>6. Mathematical Induction</h3>
+
+        <p><b>Steps:</b></p>
+        <ul>
+            <li>Base Case</li>
+            <li>Induction Hypothesis</li>
+            <li>Inductive Step</li>
+        </ul>
+
+        <p><b>Principle of Well Ordering:</b>  
+        Every non-empty set of positive integers contains a least element.</p>
+    </article>
+
+    <article>
+        <h3>7. Relations</h3>
+
+        <p><b>Binary Relation:</b>  
+        A relation R from A to B is a subset of A × B.</p>
+
+        <p><b>Properties:</b></p>
+        <ul>
+            <li><b>Reflexive:</b> (a, a) ∈ R</li>
+            <li><b>Symmetric:</b> (a, b) ∈ R ⇒ (b, a) ∈ R</li>
+            <li><b>Transitive:</b> (a, b) and (b, c) ⇒ (a, c)</li>
+        </ul>
+
+        <p><b>Equivalence Relation:</b>  
+        A relation that is reflexive, symmetric, and transitive.</p>
+
+        <p><b>Equivalence Class:</b>  
+        [a] = {x | (a, x) ∈ R}</p>
+    </article>
+</section>
+
+
+        <!-- ========== UNIT II ========== -->
+       <!-- ========== UNIT II ========== -->
+<section id="unit2">
+    <h2>UNIT II: Functions, Order Relations and Boolean Algebra</h2>
+
+    <article>
+        <h3>1. Functions</h3>
+
+        <p><b>Definition:</b>  
+        A function f from set A to set B is a relation that assigns exactly one element of B to each element of A.</p>
+
+        <p><b>Notation:</b>  
+        f : A → B</p>
+
+        <p><b>Types of Functions:</b></p>
+        <ul>
+            <li><b>One-to-One (Injective):</b> Different inputs have different outputs.</li>
+            <li><b>Onto (Surjective):</b> Every element of codomain has a pre-image.</li>
+            <li><b>Bijective:</b> Both one-to-one and onto.</li>
+        </ul>
+
+        <p><b>Growth of Functions:</b></p>
+        <ul>
+            <li>Constant: O(1)</li>
+            <li>Logarithmic: O(log n)</li>
+            <li>Linear: O(n)</li>
+            <li>Quadratic: O(n²)</li>
+            <li>Exponential: O(2ⁿ)</li>
+        </ul>
+
+        <p><b>Permutation Function:</b>  
+        A bijective function from a set onto itself.</p>
+    </article>
+
+    <article>
+        <h3>2. Order Relations</h3>
+
+        <p><b>Partial Order Relation:</b>  
+        A relation R on a set A is called a partial order if it is:</p>
+        <ul>
+            <li>Reflexive</li>
+            <li>Antisymmetric</li>
+            <li>Transitive</li>
+        </ul>
+
+        <p>The pair (A, R) is called a <b>Partially Ordered Set (POSET)</b>.</p>
+
+        <p><b>Lattice:</b>  
+        A POSET in which every pair of elements has a least upper bound (join) and a greatest lower bound (meet).</p>
+
+        <p><b>Join:</b> a ∨ b  
+        <br><b>Meet:</b> a ∧ b</p>
+    </article>
+
+    <article>
+        <h3>3. Boolean Algebra</h3>
+
+        <p><b>Definition:</b>  
+        Boolean algebra is an algebraic structure defined on a set B with two binary operations (+, ·), a unary operation (′), and two distinct elements 0 and 1.</p>
+
+        <p><b>Basic Boolean Laws:</b></p>
+        <ul>
+            <li>Identity Law</li>
+            <li>Domination Law</li>
+            <li>Idempotent Law</li>
+            <li>Complement Law</li>
+            <li>Commutative Law</li>
+            <li>Associative Law</li>
+            <li>Distributive Law</li>
+            <li>De Morgan’s Laws</li>
+        </ul>
+
+        <p><b>Minimization of Boolean Expressions:</b>  
+        Reducing a Boolean expression to its simplest form using Boolean laws or Karnaugh Maps (K-map).</p>
+    </article>
+
+    <article>
+        <h3>4. Number Theory</h3>
+
+        <p><b>Greatest Common Divisor (GCD):</b>  
+        The largest positive integer that divides two or more integers.</p>
+
+        <p><b>Least Common Multiple (LCM):</b>  
+        The smallest positive integer divisible by given integers.</p>
+
+        <p><b>Relation between GCD and LCM:</b></p>
+        <p>
+        GCD(a, b) × LCM(a, b) = a × b
+        </p>
+
+        <p><b>Prime Number:</b>  
+        A number greater than 1 that has exactly two distinct positive divisors: 1 and itself.</p>
+    </article>
+
+    <article>
+        <h3>5. Recurrence Relations</h3>
+
+        <p><b>Definition:</b>  
+        A recurrence relation is an equation that defines a sequence using previous terms.</p>
+
+        <p><b>Linear Recurrence Relation:</b></p>
+        <p>
+        aₙ = c₁aₙ₋₁ + c₂aₙ₋₂ + … + cₖaₙ₋ₖ
+        </p>
+
+        <p><b>First Order Linear Recurrence Relation:</b></p>
+        <p>
+        aₙ = c aₙ₋₁ + d
+        </p>
+
+        <p><b>Generating Function:</b>  
+        A power series used to represent a sequence.</p>
+
+        <p><b>Divide and Conquer Recurrence:</b></p>
+        <p>
+        T(n) = aT(n/b) + f(n)
+        </p>
+
+        <p><b>Master’s Theorem:</b></p>
+        <ul>
+            <li>If f(n) = O(n<sup>log<sub>b</sub>a − ε</sup>) → T(n) = Θ(n<sup>log<sub>b</sub>a</sup>)</li>
+            <li>If f(n) = Θ(n<sup>log<sub>b</sub>a</sup>) → T(n) = Θ(n<sup>log<sub>b</sub>a</sup> log n)</li>
+            <li>If f(n) = Ω(n<sup>log<sub>b</sub>a + ε</sup>) → T(n) = Θ(f(n))</li>
+        </ul>
+    </article>
+</section>
+
+        <!-- ========== UNIT III ========== -->
+       <!-- ========== UNIT III ========== -->
+<section id="unit3">
+    <h2>UNIT III: Group Theory</h2>
+
+    <article>
+        <h3>1. Semi-Group</h3>
+
+        <p><b>Definition:</b>  
+        A non-empty set S together with a binary operation (*) is called a semigroup if it satisfies the associative property.</p>
+
+        <p><b>Associative Property:</b>  
+        (a * b) * c = a * (b * c), for all a, b, c ∈ S.</p>
+
+        <p><b>Example:</b>  
+        (N, +) is a semigroup.</p>
+    </article>
+
+    <article>
+        <h3>2. Monoid</h3>
+
+        <p><b>Definition:</b>  
+        A monoid is a semigroup with an identity element.</p>
+
+        <p><b>Identity Element:</b>  
+        An element e ∈ S such that  
+        a * e = e * a = a, for all a ∈ S.</p>
+
+        <p><b>Example:</b>  
+        (N, +) with identity 0 is a monoid.</p>
+    </article>
+
+    <article>
+        <h3>3. Group</h3>
+
+        <p><b>Definition:</b>  
+        A group is a non-empty set G with a binary operation (*) satisfying:</p>
+
+        <ul>
+            <li>Closure</li>
+            <li>Associativity</li>
+            <li>Identity element</li>
+            <li>Inverse of every element</li>
+        </ul>
+
+        <p><b>Example:</b>  
+        (Z, +) is a group.</p>
+    </article>
+
+    <article>
+        <h3>4. Identity and Inverse (Uniqueness)</h3>
+
+        <p><b>Uniqueness of Identity:</b>  
+        A group has only one identity element.</p>
+
+        <p><b>Uniqueness of Inverse:</b>  
+        Every element in a group has exactly one inverse.</p>
+    </article>
+
+    <article>
+        <h3>5. Homomorphism and Isomorphism</h3>
+
+        <p><b>Homomorphism:</b>  
+        A function f : G → G′ is a homomorphism if  
+        f(a * b) = f(a) * f(b).</p>
+
+        <p><b>Isomorphism:</b>  
+        A bijective homomorphism is called an isomorphism.</p>
+
+        <p>If two groups are isomorphic, they have the same algebraic structure.</p>
+    </article>
+
+    <article>
+        <h3>6. Subgroup</h3>
+
+        <p><b>Definition:</b>  
+        A non-empty subset H of a group G is called a subgroup if H itself forms a group under the operation of G.</p>
+
+        <p><b>Subgroup Test:</b></p>
+        <ul>
+            <li>Closure under operation</li>
+            <li>Closure under inverse</li>
+        </ul>
+
+        <p><b>Example:</b>  
+        (2Z, +) is a subgroup of (Z, +).</p>
+    </article>
+
+    <article>
+        <h3>7. Cosets and Lagrange’s Theorem</h3>
+
+        <p><b>Left Coset:</b>  
+        aH = {ah | h ∈ H}</p>
+
+        <p><b>Right Coset:</b>  
+        Ha = {ha | h ∈ H}</p>
+
+        <p><b>Lagrange’s Theorem:</b>  
+        If H is a subgroup of a finite group G, then the order of H divides the order of G.</p>
+
+        <p>
+        |G| = |H| × number of cosets
+        </p>
+    </article>
+
+    <article>
+        <h3>8. Permutation Group</h3>
+
+        <p><b>Permutation:</b>  
+        A bijection from a set onto itself.</p>
+
+        <p><b>Permutation Group:</b>  
+        The set of all permutations of a set forms a group under composition.</p>
+    </article>
+
+    <article>
+        <h3>9. Cayley’s Theorem</h3>
+
+        <p><b>Statement:</b>  
+        Every group is isomorphic to a subgroup of a permutation group.</p>
+
+        <p><b>Note:</b> Proof is not required.</p>
+    </article>
+
+    <article>
+        <h3>10. Normal Subgroup and Quotient Group</h3>
+
+        <p><b>Normal Subgroup:</b>  
+        A subgroup N of G is normal if  
+        gN = Ng for all g ∈ G.</p>
+
+        <p><b>Quotient Group:</b>  
+        The set of cosets of a normal subgroup forms a group, denoted by G/N.</p>
+    </article>
+
+    <article>
+        <h3>11. Groups and Coding</h3>
+
+        <p>Group theory is used in coding theory for error detection and correction, such as cyclic codes and linear codes.</p>
+    </article>
+
+</section>
+
+        <!-- ========== UNIT IV ========== -->
+       <!-- ========== UNIT IV ========== -->
+<section id="unit4">
+    <h2>UNIT IV: Graph Theory</h2>
+
+    <article>
+        <h3>1. Graph Terminology</h3>
+
+        <p><b>Graph:</b>  
+        A graph G is an ordered pair (V, E), where V is a set of vertices and E is a set of edges.</p>
+
+        <p><b>Vertex (Node):</b>  
+        A point in a graph.</p>
+
+        <p><b>Edge:</b>  
+        A connection between two vertices.</p>
+
+        <p><b>Degree of a Vertex:</b>  
+        Number of edges incident on the vertex.</p>
+
+        <p><b>Path:</b>  
+        A sequence of vertices connected by edges.</p>
+
+        <p><b>Cycle:</b>  
+        A path that starts and ends at the same vertex.</p>
+    </article>
+
+    <article>
+        <h3>2. Planar Graph</h3>
+
+        <p><b>Definition:</b>  
+        A graph is planar if it can be drawn in a plane without any edges crossing.</p>
+
+        <p><b>Regions (Faces):</b>  
+        Areas bounded by edges in a planar graph.</p>
+    </article>
+
+    <article>
+        <h3>3. Euler’s Formula</h3>
+
+        <p><b>Statement:</b>  
+        For a connected planar graph:</p>
+
+        <p>
+        V − E + F = 2
+        </p>
+
+        <p>Where V = number of vertices,  
+        E = number of edges,  
+        F = number of faces.</p>
+
+        <p><b>Note:</b> Proof is required in exams.</p>
+    </article>
+
+    <article>
+        <h3>4. Euler Path and Euler Circuit</h3>
+
+        <p><b>Euler Path:</b>  
+        A path that uses every edge of a graph exactly once.</p>
+
+        <p><b>Euler Circuit:</b>  
+        An Euler path that starts and ends at the same vertex.</p>
+
+        <p><b>Condition:</b></p>
+        <ul>
+            <li>Euler Circuit → All vertices have even degree</li>
+            <li>Euler Path → Exactly two vertices have odd degree</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>5. Hamiltonian Path and Circuit</h3>
+
+        <p><b>Hamiltonian Path:</b>  
+        A path that visits each vertex exactly once.</p>
+
+        <p><b>Hamiltonian Circuit:</b>  
+        A Hamiltonian path that starts and ends at the same vertex.</p>
+
+        <p><b>Note:</b>  
+        No general necessary and sufficient condition exists.</p>
+    </article>
+
+    <article>
+        <h3>6. Chromatic Number</h3>
+
+        <p><b>Chromatic Number (χ):</b>  
+        Minimum number of colors required to color the vertices of a graph such that no two adjacent vertices have the same color.</p>
+    </article>
+
+    <article>
+        <h3>7. Five Color Theorem</h3>
+
+        <p><b>Statement:</b>  
+        Every planar graph can be colored using at most five colors.</p>
+
+        <p><b>Note:</b> Proof is required in exams.</p>
+    </article>
+
+    <article>
+        <h3>8. Shortest Path Algorithm</h3>
+
+        <p><b>Dijkstra’s Algorithm:</b>  
+        Used to find the shortest path from a source vertex to all other vertices in a weighted graph.</p>
+    </article>
+
+    <article>
+        <h3>9. Minimal Spanning Tree</h3>
+
+        <p><b>Spanning Tree:</b>  
+        A subgraph that includes all vertices of the graph and is a tree.</p>
+
+        <p><b>Minimum Spanning Tree (MST):</b>  
+        A spanning tree with minimum total edge weight.</p>
+
+        <p><b>Algorithms:</b></p>
+        <ul>
+            <li>Prim’s Algorithm</li>
+            <li>Kruskal’s Algorithm</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>10. Graph Traversal</h3>
+
+        <p><b>Depth First Search (DFS):</b>  
+        Explores as far as possible before backtracking.</p>
+
+        <p><b>Breadth First Search (BFS):</b>  
+        Explores all neighbors of a vertex before moving deeper.</p>
+    </article>
+
+    <article>
+        <h3>11. Trees from DFS and BFS</h3>
+
+        <p>DFS and BFS generate spanning trees called DFS tree and BFS tree respectively.</p>
+    </article>
+
+    <article>
+        <h3>12. Connected Components</h3>
+
+        <p>A connected component is a maximal set of vertices such that there is a path between every pair of vertices.</p>
+    </article>
+
+    <article>
+        <h3>13. Graph Complexity Analysis</h3>
+
+        <p><b>Time Complexity:</b></p>
+        <ul>
+            <li>DFS: O(V + E)</li>
+            <li>BFS: O(V + E)</li>
+        </ul>
+    </article>
+
+</section>
+
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p>© Discrete Mathematics Notes | B.Tech CSE</p>
+    </footer>
+
+    <!-- JS will be linked later -->
+    <script src="index.js"></script>
+
+</body>
+</html>
