@@ -1159,3 +1159,21 @@ body.light-mode .subject-select option {
   }
 }
 
+
+/* =========================================================
+   CONTENT ALIGNMENT SAFETY FIX (DM + DLCD)
+   ========================================================= */
+
+main,
+section,
+article {
+  text-align: left;
+}
+
+article h3,
+article p,
+article ul,
+article li,
+article pre {
+  text-align: left;
+}
