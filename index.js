@@ -203,6 +203,15 @@ window.addEventListener("load", () => {
   const y = localStorage.getItem("scrollY");
   if (y) scrollTo(0, y);
 });
+document.getElementById("subjectBtn").addEventListener("click", () => {
+    const page = window.location.pathname;
+
+    if (page.includes("index2")) {
+        window.location.href = "index.html";   // Discrete Math
+    } else {
+        window.location.href = "index2.html";  // DLCD
+    }
+});
 
 /* ---------------------------------------------------------
    READY
