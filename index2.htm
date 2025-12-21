@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Logic and Circuit Design Notes</title>
+
+    <!-- CSS will be linked later -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+ <header>
+  <h1>Digital Logic and Circuit Design</h1>
+  <p>B.Tech CSE – Complete Notes by Vivek Yadav</p>
+
+</header>
+
+<div class="controls">
+  <button id="themeBtn" class="theme-btn" data-tooltip="Change theme">
+    Theme
+  </button>
+
+  <button id="examBtn" class="exam-btn" data-tooltip="Exam mode">
+    Exam
+  </button>
+
+  <button id="lightBtn" class="light-btn" data-tooltip="Light mode">
+    Light
+  </button>
+
+  <!-- ✅ SUBJECT SWITCH BUTTON -->
+  <button id="subjectBtn" class="subject-btn" data-tooltip="Switch subject">
+    Subject
+  </button>
+</div>
+
+
+
+    <!-- ================= NAVIGATION ================= -->
+    <nav>
+        <ul>
+            <li><a href="#unit1">Unit I</a></li>
+            <li><a href="#unit2">Unit II</a></li>
+            <li><a href="#unit3">Unit III</a></li>
+            <li><a href="#unit4">Unit IV</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main>
+
+        <!-- ========== UNIT I ========== -->
+        <!-- ========== UNIT I ========== -->
+<!-- ========== UNIT I ========== -->
+<section id="unit1">
+    <h2>UNIT I: Boolean Algebra and Combinational Logic</h2>
+
+    <article>
+        <h3>1. Review of Number Systems</h3>
+
+        <p><b>Number System:</b>  
+        A number system is a method of representing numbers using a set of symbols and a base (radix).</p>
+
+        <p><b>Common Number Systems:</b></p>
+        <ul>
+            <li><b>Decimal:</b> Base 10 (0–9)</li>
+            <li><b>Binary:</b> Base 2 (0, 1)</li>
+            <li><b>Octal:</b> Base 8 (0–7)</li>
+            <li><b>Hexadecimal:</b> Base 16 (0–9, A–F)</li>
+        </ul>
+
+        <p><b>Number Conversion:</b></p>
+        <ul>
+            <li>Decimal ↔ Binary</li>
+            <li>Binary ↔ Octal</li>
+            <li>Binary ↔ Hexadecimal</li>
+        </ul>
+
+        <p><b>Signed and Unsigned Numbers:</b></p>
+        <ul>
+            <li><b>Unsigned:</b> Represents only positive numbers</li>
+            <li><b>Signed:</b> Represents both positive and negative numbers</li>
+        </ul>
+
+        <p><b>Signed Number Representations:</b></p>
+        <ul>
+            <li>Sign Magnitude</li>
+            <li>1’s Complement</li>
+            <li>2’s Complement (most commonly used)</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>2. Fixed Point and Floating Point Representation</h3>
+
+        <p><b>Fixed Point Representation:</b>  
+        The position of the binary point is fixed. Used for simple and low-cost hardware.</p>
+
+        <p><b>Advantages:</b></p>
+        <ul>
+            <li>Simple implementation</li>
+            <li>Fast computation</li>
+        </ul>
+
+        <p><b>Floating Point Representation:</b>  
+        The binary point can move. Numbers are represented using mantissa and exponent.</p>
+
+        <p><b>IEEE-754 Floating Point Format:</b></p>
+        <ul>
+            <li>Single Precision (32-bit)</li>
+            <li>Double Precision (64-bit)</li>
+        </ul>
+
+        <p><b>Advantages:</b></p>
+        <ul>
+            <li>Wide range of numbers</li>
+            <li>High precision</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>3. Binary Codes</h3>
+
+        <p><b>Binary Code:</b>  
+        A group of binary bits used to represent characters, numbers, or symbols.</p>
+
+        <p><b>Types of Binary Codes:</b></p>
+        <ul>
+            <li><b>BCD (Binary Coded Decimal)</b></li>
+            <li><b>Excess-3 Code</b></li>
+            <li><b>Gray Code</b></li>
+            <li><b>ASCII Code</b></li>
+        </ul>
+
+        <p><b>Gray Code:</b>  
+        Only one bit changes between successive numbers, reducing errors.</p>
+
+        <p><b>Error Detection:</b>  
+        Parity bits are used to detect errors in data transmission.</p>
+    </article>
+
+    <article>
+        <h3>4. Boolean Algebra</h3>
+
+        <p><b>Definition:</b>  
+        Boolean Algebra is a mathematical system for analyzing and simplifying digital logic circuits using binary variables.</p>
+
+        <p><b>Boolean Variables:</b>  
+        Variables can take only two values: 0 or 1.</p>
+
+        <p><b>Basic Boolean Operations:</b></p>
+        <ul>
+            <li>AND (·)</li>
+            <li>OR (+)</li>
+            <li>NOT (′)</li>
+        </ul>
+
+        <p><b>Basic Postulates:</b></p>
+        <ul>
+            <li>Closure</li>
+            <li>Identity elements</li>
+            <li>Commutative property</li>
+            <li>Associative property</li>
+            <li>Distributive property</li>
+            <li>Complement existence</li>
+        </ul>
+
+        <p><b>Important Boolean Theorems:</b></p>
+        <ul>
+            <li>Identity Law</li>
+            <li>Null Law</li>
+            <li>Idempotent Law</li>
+            <li>Involution Law</li>
+            <li>Absorption Law</li>
+            <li>De Morgan’s Theorems</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>5. Simplification of Boolean Functions</h3>
+
+        <p><b>Need for Simplification:</b>  
+        Reduces hardware cost, power consumption, and delay.</p>
+
+        <p><b>Karnaugh Map (K-Map):</b></p>
+        <ul>
+            <li>Graphical method</li>
+            <li>Used for up to 4–6 variables</li>
+            <li>Groups are formed in powers of 2</li>
+        </ul>
+
+        <p><b>Advantages:</b></p>
+        <ul>
+            <li>Simple and visual</li>
+            <li>Minimum logic expression</li>
+        </ul>
+
+        <p><b>Quine–McCluskey Method:</b></p>
+        <ul>
+            <li>Tabular method</li>
+            <li>Suitable for large number of variables</li>
+            <li>Computer-oriented approach</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>6. Logic Gates and Combinational Logic</h3>
+
+        <p><b>Logic Gate:</b>  
+        An electronic circuit that performs a logical operation.</p>
+
+        <p><b>Basic Gates:</b></p>
+        <ul>
+            <li>AND</li>
+            <li>OR</li>
+            <li>NOT</li>
+        </ul>
+
+        <p><b>Universal Gates:</b></p>
+        <ul>
+            <li>NAND</li>
+            <li>NOR</li>
+        </ul>
+
+        <p><b>Combinational Logic Circuit:</b>  
+        Output depends only on present input values.</p>
+    </article>
+
+    <article>
+        <h3>7. Adders and Subtractors</h3>
+
+        <p><b>Half Adder:</b>  
+        Adds two single-bit binary numbers.</p>
+
+        <p><b>Full Adder:</b>  
+        Adds three bits including carry input.</p>
+
+        <p><b>Binary Subtractor:</b></p>
+        <ul>
+            <li>Half Subtractor</li>
+            <li>Full Subtractor</li>
+        </ul>
+
+        <p><b>Adder-Subtractor:</b>  
+        Performs both addition and subtraction using 2’s complement.</p>
+    </article>
+
+    <article>
+        <h3>8. Magnitude Comparator</h3>
+
+        <p><b>Definition:</b>  
+        A combinational circuit that compares two binary numbers.</p>
+
+        <p><b>Outputs:</b></p>
+        <ul>
+            <li>A > B</li>
+            <li>A = B</li>
+            <li>A < B</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>9. Encoder and Decoder</h3>
+
+        <p><b>Encoder:</b>  
+        Converts 2ⁿ inputs into n-bit output code.</p>
+
+        <p><b>Decoder:</b>  
+        Converts n-bit input into 2ⁿ outputs.</p>
+
+        <p><b>Applications:</b></p>
+        <ul>
+            <li>Memory address decoding</li>
+            <li>Data compression</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>10. Multiplexers and Demultiplexers</h3>
+
+        <p><b>Multiplexer (MUX):</b>  
+        Selects one of many inputs and forwards it to a single output.</p>
+
+        <p><b>Demultiplexer (DEMUX):</b>  
+        Routes one input to one of many outputs.</p>
+
+        <p><b>Applications:</b></p>
+        <ul>
+            <li>Data routing</li>
+            <li>Resource sharing</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>11. Code Converters and Parity Circuits</h3>
+
+        <p><b>Code Converter:</b>  
+        Converts data from one binary code to another.</p>
+
+        <p><b>Examples:</b></p>
+        <ul>
+            <li>Binary to Gray</li>
+            <li>BCD to Excess-3</li>
+        </ul>
+
+        <p><b>Parity Generator:</b>  
+        Generates parity bit for error detection.</p>
+
+        <p><b>Parity Checker:</b>  
+        Detects transmission errors.</p>
+    </article>
+
+    <article>
+        <h3>12. Implementation Using Multiplexers</h3>
+
+        <p><b>Concept:</b>  
+        Any Boolean function can be implemented using multiplexers.</p>
+
+        <p><b>Advantages:</b></p>
+        <ul>
+            <li>Hardware reduction</li>
+            <li>Flexible design</li>
+        </ul>
+
+        <p><b>Method:</b></p>
+        <ul>
+            <li>Select lines represent variables</li>
+            <li>Data inputs are assigned constants or variables</li>
+        </ul>
+    </article>
+
+</section>
+
+<!-- ========== UNIT II ========== -->
+<section id="unit2">
+    <h2>UNIT II: Sequential Circuits</h2>
+
+    <article>
+        <h3>1. Sequential Circuits</h3>
+
+        <p><b>Definition:</b>  
+        A sequential circuit is a digital circuit whose output depends on both present inputs and past outputs (stored state).</p>
+
+        <p><b>Difference from Combinational Circuits:</b></p>
+        <ul>
+            <li>Combinational: Output depends only on present input</li>
+            <li>Sequential: Output depends on input + memory</li>
+        </ul>
+
+        <p><b>Basic Components:</b></p>
+        <ul>
+            <li>Combinational Logic</li>
+            <li>Memory Elements (Flip-flops / Latches)</li>
+            <li>Clock signal</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>2. General Model of Sequential Circuits</h3>
+
+        <p><b>Block Description:</b></p>
+        <ul>
+            <li>Inputs are applied to combinational logic</li>
+            <li>Outputs depend on present state and inputs</li>
+            <li>Memory elements store the state</li>
+            <li>Clock synchronizes state transitions</li>
+        </ul>
+
+        <p><b>State:</b>  
+        The information stored in memory elements at a given time.</p>
+
+        <p><b>Next State:</b>  
+        The state to which the circuit moves after the clock pulse.</p>
+    </article>
+
+    <article>
+        <h3>3. Latches</h3>
+
+        <p><b>Definition:</b>  
+        A latch is a level-sensitive memory element.</p>
+
+        <p><b>Types of Latches:</b></p>
+        <ul>
+            <li>SR Latch</li>
+            <li>D Latch</li>
+        </ul>
+
+        <p><b>Characteristics:</b></p>
+        <ul>
+            <li>No clock required</li>
+            <li>Output changes as long as enable is active</li>
+        </ul>
+
+        <p><b>Limitation:</b>  
+        Prone to race conditions.</p>
+    </article>
+
+    <article>
+        <h3>4. Flip-Flops</h3>
+
+        <p><b>Definition:</b>  
+        A flip-flop is an edge-triggered memory element that stores one bit.</p>
+
+        <p><b>Types of Flip-Flops:</b></p>
+        <ul>
+            <li>SR Flip-Flop</li>
+            <li>JK Flip-Flop</li>
+            <li>D Flip-Flop</li>
+            <li>T Flip-Flop</li>
+        </ul>
+
+        <p><b>Characteristic Equation:</b>  
+        Defines next state in terms of present state and inputs.</p>
+    </article>
+
+    <article>
+        <h3>5. Level Triggering and Edge Triggering</h3>
+
+        <p><b>Level Triggering:</b>  
+        Output changes while clock remains at a particular level.</p>
+
+        <p><b>Edge Triggering:</b></p>
+        <ul>
+            <li>Positive Edge Triggering (↑)</li>
+            <li>Negative Edge Triggering (↓)</li>
+        </ul>
+
+        <p><b>Advantage of Edge Triggering:</b>  
+        Eliminates unwanted multiple transitions.</p>
+    </article>
+
+    <article>
+        <h3>6. Master-Slave Configuration</h3>
+
+        <p><b>Definition:</b>  
+        A master-slave flip-flop consists of two flip-flops connected in series.</p>
+
+        <p><b>Operation:</b></p>
+        <ul>
+            <li>Master responds during first half of clock</li>
+            <li>Slave responds during second half</li>
+        </ul>
+
+        <p><b>Purpose:</b>  
+        Eliminates race-around condition in JK flip-flop.</p>
+    </article>
+
+    <article>
+        <h3>7. State Diagram and State Table</h3>
+
+        <p><b>State Diagram:</b>  
+        A graphical representation of states and transitions.</p>
+
+        <p><b>State Table:</b>  
+        A tabular representation showing present state, input, next state, and output.</p>
+
+        <p><b>Uses:</b></p>
+        <ul>
+            <li>System modeling</li>
+            <li>Sequential circuit design</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>8. State Reduction</h3>
+
+        <p><b>Definition:</b>  
+        The process of reducing number of states without changing behavior.</p>
+
+        <p><b>Equivalent States:</b>  
+        States that produce same output and same next states for all inputs.</p>
+
+        <p><b>Procedure:</b></p>
+        <ul>
+            <li>Partitioning method</li>
+            <li>State equivalence checking</li>
+        </ul>
+
+        <p><b>Advantage:</b>  
+        Reduces hardware complexity.</p>
+    </article>
+
+    <article>
+        <h3>9. Design of Synchronous Sequential Circuits</h3>
+
+        <p><b>Steps:</b></p>
+        <ul>
+            <li>Problem specification</li>
+            <li>State diagram</li>
+            <li>State table</li>
+            <li>Flip-flop selection</li>
+            <li>Excitation table</li>
+            <li>Logic simplification</li>
+            <li>Circuit implementation</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>10. Counters</h3>
+
+        <p><b>Counter:</b>  
+        A sequential circuit that counts clock pulses.</p>
+
+        <p><b>Types:</b></p>
+        <ul>
+            <li>Up Counter</li>
+            <li>Down Counter</li>
+            <li>Up/Down Counter</li>
+            <li>Modulus Counter (MOD-n)</li>
+        </ul>
+
+        <p><b>Applications:</b></p>
+        <ul>
+            <li>Timers</li>
+            <li>Frequency division</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>11. Shift Registers</h3>
+
+        <p><b>Definition:</b>  
+        A shift register stores and shifts data bit-by-bit.</p>
+
+        <p><b>Types:</b></p>
+        <ul>
+            <li>SISO</li>
+            <li>SIPO</li>
+            <li>PISO</li>
+            <li>PIPO</li>
+        </ul>
+
+        <p><b>Applications:</b></p>
+        <ul>
+            <li>Data transfer</li>
+            <li>Serial to parallel conversion</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>12. Ring Counter and Johnson Counter</h3>
+
+        <p><b>Ring Counter:</b>  
+        A shift register with feedback from last output to first input.</p>
+
+        <p><b>Johnson Counter:</b>  
+        A modified ring counter with inverted feedback.</p>
+
+        <p><b>Advantage:</b>  
+        Simple decoding logic.</p>
+    </article>
+
+    <article>
+        <h3>13. Timing Diagram</h3>
+
+        <p><b>Definition:</b>  
+        A graphical representation of signals versus time.</p>
+
+        <p><b>Used For:</b></p>
+        <ul>
+            <li>Understanding circuit behavior</li>
+            <li>Clock synchronization analysis</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>14. Serial Adder</h3>
+
+        <p><b>Definition:</b>  
+        Adds binary numbers serially using a single full adder.</p>
+
+        <p><b>Components:</b></p>
+        <ul>
+            <li>Shift registers</li>
+            <li>Full adder</li>
+            <li>Flip-flop for carry</li>
+        </ul>
+
+        <p><b>Advantage:</b>  
+        Low hardware requirement.</p>
+    </article>
+
+    <article>
+        <h3>15. Sequence Detector</h3>
+
+        <p><b>Definition:</b>  
+        A sequential circuit that detects a specific bit sequence.</p>
+
+        <p><b>Types:</b></p>
+        <ul>
+            <li>Mealy Machine</li>
+            <li>Moore Machine</li>
+        </ul>
+
+        <p><b>Applications:</b></p>
+        <ul>
+            <li>Communication systems</li>
+            <li>Control units</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>16. Programmable Logic Devices</h3>
+
+        <p><b>Programmable Logic Array (PLA):</b></p>
+        <ul>
+            <li>Programmable AND array</li>
+            <li>Programmable OR array</li>
+        </ul>
+
+        <p><b>Programmable Array Logic (PAL):</b></p>
+        <ul>
+            <li>Programmable AND array</li>
+            <li>Fixed OR array</li>
+        </ul>
+
+        <p><b>Comparison:</b>  
+        PLA is more flexible, PAL is faster.</p>
+    </article>
+
+    <article>
+        <h3>17. Memory Unit</h3>
+
+        <p><b>Memory Unit:</b>  
+        Stores binary information permanently or temporarily.</p>
+
+        <p><b>Classification:</b></p>
+        <ul>
+            <li>ROM</li>
+            <li>RAM</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>18. Random Access Memory (RAM)</h3>
+
+        <p><b>Definition:</b>  
+        A memory where data can be accessed directly in any order.</p>
+
+        <p><b>Types of RAM:</b></p>
+        <ul>
+            <li>Static RAM (SRAM)</li>
+            <li>Dynamic RAM (DRAM)</li>
+        </ul>
+
+        <p><b>Characteristics:</b></p>
+        <ul>
+            <li>Volatile memory</li>
+            <li>Fast access time</li>
+        </ul>
+    </article>
+
+</section>
+<!-- ========== UNIT III ========== -->
+<section id="unit3">
+    <h2>UNIT III: Basic Computer Organization</h2>
+
+    <article>
+        <h3>1. Stored Program Organization</h3>
+
+        <p><b>Concept:</b>  
+        In stored program organization, both instructions and data are stored in the same memory.</p>
+
+        <p><b>Key Idea:</b>  
+        A computer can modify its program during execution.</p>
+
+        <p><b>Advantages:</b></p>
+        <ul>
+            <li>Flexibility</li>
+            <li>Efficient use of memory</li>
+            <li>Foundation of modern computers</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>2. Computer Registers</h3>
+
+        <p><b>Register:</b>  
+        A high-speed storage element inside the CPU used to hold data and instructions temporarily.</p>
+
+        <p><b>Types of Registers:</b></p>
+        <ul>
+            <li>Accumulator (AC)</li>
+            <li>Program Counter (PC)</li>
+            <li>Instruction Register (IR)</li>
+            <li>Memory Address Register (MAR)</li>
+            <li>Memory Buffer Register (MBR)</li>
+        </ul>
+
+        <p><b>Purpose:</b>  
+        Improves execution speed.</p>
+    </article>
+
+    <article>
+        <h3>3. Bus System</h3>
+
+        <p><b>Bus:</b>  
+        A set of common lines used to transfer data between components.</p>
+
+        <p><b>Types of Buses:</b></p>
+        <ul>
+            <li>Data Bus</li>
+            <li>Address Bus</li>
+            <li>Control Bus</li>
+        </ul>
+
+        <p><b>Advantage:</b>  
+        Reduces hardware complexity.</p>
+    </article>
+
+    <article>
+        <h3>4. Instruction Set Completeness</h3>
+
+        <p><b>Instruction Set:</b>  
+        A collection of machine-level instructions that a CPU can execute.</p>
+
+        <p><b>Completeness Requirements:</b></p>
+        <ul>
+            <li>Arithmetic operations</li>
+            <li>Logical operations</li>
+            <li>Data transfer</li>
+            <li>Control instructions</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>5. Instruction Cycle</h3>
+
+        <p><b>Instruction Cycle:</b>  
+        The sequence of steps required to execute an instruction.</p>
+
+        <p><b>Phases:</b></p>
+        <ul>
+            <li>Fetch</li>
+            <li>Decode</li>
+            <li>Execute</li>
+            <li>Interrupt (if any)</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>6. Register Transfer Language (RTL)</h3>
+
+        <p><b>Definition:</b>  
+        RTL is a symbolic language used to describe data transfers between registers.</p>
+
+        <p><b>Example:</b></p>
+        <p>
+        AC ← AC + DR
+        </p>
+
+        <p><b>Use:</b>  
+        Describes micro-operations clearly.</p>
+    </article>
+
+    <article>
+        <h3>7. Micro-operations</h3>
+
+        <p><b>Micro-operation:</b>  
+        An elementary operation performed on data stored in registers.</p>
+
+        <p><b>Types:</b></p>
+        <ul>
+            <li>Arithmetic micro-operations</li>
+            <li>Logic micro-operations</li>
+            <li>Shift micro-operations</li>
+        </ul>
+
+        <p><b>Examples:</b></p>
+        <ul>
+            <li>Add, Subtract</li>
+            <li>AND, OR, XOR</li>
+            <li>Shift left, Shift right</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>8. Instruction Codes</h3>
+
+        <p><b>Instruction Code:</b>  
+        A binary code that specifies an operation and its operands.</p>
+
+        <p><b>Fields:</b></p>
+        <ul>
+            <li>Opcode</li>
+            <li>Operand address</li>
+        </ul>
+
+        <p><b>Instruction Types:</b></p>
+        <ul>
+            <li>Memory reference</li>
+            <li>Register reference</li>
+            <li>Input-output</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>9. Design of a Simple Computer</h3>
+
+        <p><b>Components:</b></p>
+        <ul>
+            <li>CPU</li>
+            <li>Main Memory</li>
+            <li>Input/Output devices</li>
+        </ul>
+
+        <p><b>CPU Consists of:</b></p>
+        <ul>
+            <li>ALU</li>
+            <li>Registers</li>
+            <li>Control Unit</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>10. Arithmetic Logic Unit (ALU)</h3>
+
+        <p><b>ALU:</b>  
+        Performs arithmetic and logical operations.</p>
+
+        <p><b>Operations:</b></p>
+        <ul>
+            <li>Addition</li>
+            <li>Subtraction</li>
+            <li>Logical AND, OR, NOT</li>
+            <li>Comparison</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>11. Shifter</h3>
+
+        <p><b>Definition:</b>  
+        A combinational circuit used to shift bits of a data word.</p>
+
+        <p><b>Types:</b></p>
+        <ul>
+            <li>Logical shift</li>
+            <li>Arithmetic shift</li>
+            <li>Circular shift</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>12. Hardwired Control Unit</h3>
+
+        <p><b>Definition:</b>  
+        A control unit implemented using logic gates, flip-flops, and decoders.</p>
+
+        <p><b>Characteristics:</b></p>
+        <ul>
+            <li>Fast operation</li>
+            <li>Difficult to modify</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>13. Programming the Basic Computer</h3>
+
+        <p><b>Programming:</b>  
+        Writing instructions to control computer operations.</p>
+
+        <p><b>Levels:</b></p>
+        <ul>
+            <li>Machine Language</li>
+            <li>Assembly Language</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>14. Machine Language Instructions</h3>
+
+        <p><b>Machine Language:</b>  
+        Instructions written in binary form.</p>
+
+        <p><b>Features:</b></p>
+        <ul>
+            <li>Fast execution</li>
+            <li>Machine dependent</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>15. Assembly Language</h3>
+
+        <p><b>Assembly Language:</b>  
+        Uses mnemonic codes instead of binary.</p>
+
+        <p><b>Advantage:</b>  
+        Easier to write and understand than machine language.</p>
+    </article>
+
+    <article>
+        <h3>16. Microprogrammed Control</h3>
+
+        <p><b>Definition:</b>  
+        Control signals are generated using microinstructions stored in control memory.</p>
+
+        <p><b>Advantages:</b></p>
+        <ul>
+            <li>Flexible</li>
+            <li>Easy to modify</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>17. Horizontal and Vertical Microprogramming</h3>
+
+        <p><b>Horizontal Microprogramming:</b></p>
+        <ul>
+            <li>Wide control word</li>
+            <li>Fast execution</li>
+        </ul>
+
+        <p><b>Vertical Microprogramming:</b></p>
+        <ul>
+            <li>Narrow control word</li>
+            <li>Slower but compact</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>18. Central Processing Unit (CPU)</h3>
+
+        <p><b>CPU:</b>  
+        The brain of the computer.</p>
+
+        <p><b>Main Parts:</b></p>
+        <ul>
+            <li>ALU</li>
+            <li>Control Unit</li>
+            <li>Registers</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>19. Instruction Formats and Addressing Modes</h3>
+
+        <p><b>Instruction Formats:</b></p>
+        <ul>
+            <li>Zero address</li>
+            <li>One address</li>
+            <li>Two address</li>
+            <li>Three address</li>
+        </ul>
+
+        <p><b>Addressing Modes:</b></p>
+        <ul>
+            <li>Immediate</li>
+            <li>Direct</li>
+            <li>Indirect</li>
+            <li>Register</li>
+            <li>Indexed</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>20. Data Path</h3>
+
+        <p><b>Data Path:</b>  
+        The collection of registers, buses, and functional units through which data flows.</p>
+    </article>
+
+    <article>
+        <h3>21. RISC and CISC Architectures</h3>
+
+        <p><b>RISC:</b> Reduced Instruction Set Computer</p>
+        <ul>
+            <li>Simple instructions</li>
+            <li>Fast execution</li>
+        </ul>
+
+        <p><b>CISC:</b> Complex Instruction Set Computer</p>
+        <ul>
+            <li>Complex instructions</li>
+            <li>Compact programs</li>
+        </ul>
+    </article>
+
+</section>
+<!-- ========== UNIT IV ========== -->
+<section id="unit4">
+    <h2>UNIT IV: Computer Arithmetic, I/O and Memory Organization</h2>
+
+    <article>
+        <h3>1. Computer Arithmetic</h3>
+
+        <p><b>Computer Arithmetic:</b>  
+        Deals with the implementation of arithmetic operations in digital hardware.</p>
+
+        <p><b>Challenges:</b></p>
+        <ul>
+            <li>Speed</li>
+            <li>Accuracy</li>
+            <li>Overflow handling</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>2. Binary Addition</h3>
+
+        <p><b>Definition:</b>  
+        Binary addition follows the same rules as decimal addition using bits 0 and 1.</p>
+
+        <p><b>Rules:</b></p>
+        <ul>
+            <li>0 + 0 = 0</li>
+            <li>0 + 1 = 1</li>
+            <li>1 + 0 = 1</li>
+            <li>1 + 1 = 10 (sum = 0, carry = 1)</li>
+        </ul>
+
+        <p><b>Hardware Used:</b></p>
+        <ul>
+            <li>Half Adder</li>
+            <li>Full Adder</li>
+            <li>Parallel Adder</li>
+        </ul>
+
+        <p><b>Overflow:</b>  
+        Occurs when the result exceeds the available number of bits.</p>
+    </article>
+
+    <article>
+        <h3>3. Binary Subtraction</h3>
+
+        <p><b>Methods:</b></p>
+        <ul>
+            <li>Direct subtraction with borrow</li>
+            <li>2’s complement method</li>
+        </ul>
+
+        <p><b>2’s Complement Subtraction:</b></p>
+        <ul>
+            <li>Take 2’s complement of subtrahend</li>
+            <li>Add it to minuend</li>
+            <li>Ignore carry (if any)</li>
+        </ul>
+
+        <p><b>Advantage:</b>  
+        Same adder circuit used for addition and subtraction.</p>
+    </article>
+
+    <article>
+        <h3>4. Binary Multiplication</h3>
+
+        <p><b>Principle:</b>  
+        Similar to decimal multiplication using shifting and addition.</p>
+
+        <p><b>Algorithm:</b></p>
+        <ul>
+            <li>Multiply multiplicand by each bit of multiplier</li>
+            <li>Shift partial products</li>
+            <li>Add all partial products</li>
+        </ul>
+
+        <p><b>Hardware:</b></p>
+        <ul>
+            <li>Shift registers</li>
+            <li>Adders</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>5. Binary Division</h3>
+
+        <p><b>Division:</b>  
+        Repeated subtraction and shifting.</p>
+
+        <p><b>Algorithms:</b></p>
+        <ul>
+            <li>Restoring Division</li>
+            <li>Non-Restoring Division</li>
+        </ul>
+
+        <p><b>Registers Used:</b></p>
+        <ul>
+            <li>Dividend register</li>
+            <li>Divisor register</li>
+            <li>Quotient register</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>6. Input-Output Organization</h3>
+
+        <p><b>I/O Organization:</b>  
+        Provides communication between CPU and peripheral devices.</p>
+
+        <p><b>I/O Devices:</b></p>
+        <ul>
+            <li>Keyboard</li>
+            <li>Mouse</li>
+            <li>Printer</li>
+            <li>Disk</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>7. Modes of Data Transfer</h3>
+
+        <p><b>Programmed I/O:</b></p>
+        <ul>
+            <li>CPU continuously checks device status</li>
+            <li>Simple but inefficient</li>
+        </ul>
+
+        <p><b>Interrupt-Driven I/O:</b></p>
+        <ul>
+            <li>CPU interrupted when device is ready</li>
+            <li>Better CPU utilization</li>
+        </ul>
+
+        <p><b>Direct Memory Access (DMA):</b></p>
+        <ul>
+            <li>Data transferred directly between I/O and memory</li>
+            <li>CPU involvement minimized</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>8. Interrupt Cycle</h3>
+
+        <p><b>Interrupt:</b>  
+        A signal that temporarily halts CPU execution.</p>
+
+        <p><b>Interrupt Cycle Steps:</b></p>
+        <ul>
+            <li>Save current state</li>
+            <li>Branch to interrupt service routine</li>
+            <li>Execute ISR</li>
+            <li>Return to main program</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>9. Direct Memory Access (DMA)</h3>
+
+        <p><b>DMA Controller:</b>  
+        A hardware unit that manages data transfer.</p>
+
+        <p><b>DMA Modes:</b></p>
+        <ul>
+            <li>Burst mode</li>
+            <li>Cycle stealing</li>
+        </ul>
+
+        <p><b>Advantage:</b>  
+        High-speed data transfer.</p>
+    </article>
+
+    <article>
+        <h3>10. Input-Output Processor (IOP)</h3>
+
+        <p><b>IOP:</b>  
+        A dedicated processor for handling I/O operations.</p>
+
+        <p><b>Functions:</b></p>
+        <ul>
+            <li>Controls I/O devices</li>
+            <li>Reduces CPU workload</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>11. Memory Organization</h3>
+
+        <p><b>Memory Organization:</b>  
+        Arrangement of memory units for efficient access.</p>
+
+        <p><b>Key Parameters:</b></p>
+        <ul>
+            <li>Access time</li>
+            <li>Capacity</li>
+            <li>Cost</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>12. Memory Hierarchy</h3>
+
+        <p><b>Concept:</b>  
+        Organizing memory in levels based on speed and cost.</p>
+
+        <p><b>Hierarchy:</b></p>
+        <ul>
+            <li>Registers</li>
+            <li>Cache</li>
+            <li>Main Memory</li>
+            <li>Secondary Storage</li>
+        </ul>
+
+        <p><b>Principle:</b>  
+        Locality of reference.</p>
+    </article>
+
+    <article>
+        <h3>13. Associative Memory</h3>
+
+        <p><b>Associative Memory (CAM):</b>  
+        Memory accessed by content rather than address.</p>
+
+        <p><b>Application:</b></p>
+        <ul>
+            <li>Cache memory</li>
+            <li>TLB</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>14. Cache Memory</h3>
+
+        <p><b>Cache:</b>  
+        High-speed memory placed between CPU and main memory.</p>
+
+        <p><b>Mapping Techniques:</b></p>
+        <ul>
+            <li>Direct mapping</li>
+            <li>Associative mapping</li>
+            <li>Set-associative mapping</li>
+        </ul>
+
+        <p><b>Performance Metric:</b></p>
+        <p>Hit ratio</p>
+    </article>
+
+    <article>
+        <h3>15. Internal and External Memory</h3>
+
+        <p><b>Internal Memory:</b></p>
+        <ul>
+            <li>Registers</li>
+            <li>Cache</li>
+            <li>Main memory</li>
+        </ul>
+
+        <p><b>External Memory:</b></p>
+        <ul>
+            <li>Hard disk</li>
+            <li>SSD</li>
+            <li>Optical disks</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>16. Virtual Memory</h3>
+
+        <p><b>Virtual Memory:</b>  
+        Allows execution of programs larger than physical memory.</p>
+
+        <p><b>Technique:</b></p>
+        <ul>
+            <li>Paging</li>
+            <li>Segmentation</li>
+        </ul>
+
+        <p><b>Advantages:</b></p>
+        <ul>
+            <li>Efficient memory utilization</li>
+            <li>Large address space</li>
+        </ul>
+    </article>
+
+</section>
+
+
+</body>
+</html>
