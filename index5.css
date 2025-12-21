@@ -1158,22 +1158,32 @@ body.light-mode .subject-select option {
     padding: 0.4rem 0.95rem;
   }
 }
-
-
 /* =========================================================
-   CONTENT ALIGNMENT SAFETY FIX (DM + DLCD)
+   DM CONTENT LEFT ALIGN FIX
    ========================================================= */
 
+/* force left alignment only inside main content */
 main,
 section,
 article {
   text-align: left;
 }
 
-article h3,
+/* paragraphs & lists */
 article p,
 article ul,
 article li,
 article pre {
   text-align: left;
 }
+
+/* keep headings styled but readable */
+article h3 {
+  text-align: left;
+}
+
+section h2 {
+  text-align: left;
+}
+
+
