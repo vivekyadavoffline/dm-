@@ -203,17 +203,29 @@ window.addEventListener("load", () => {
   const y = localStorage.getItem("scrollY");
   if (y) scrollTo(0, y);
 });
-document.getElementById("subjectBtn").addEventListener("click", () => {
+document.addEventListener("DOMContentLoaded", () => {
+    const subjectSelect = document.getElementById("subjectSelect");
+    if (!subjectSelect) return;
+
     const page = window.location.pathname;
 
+    // Auto-select current subject
     if (page.includes("index2")) {
-        window.location.href = "index.html";   // Discrete Math
+        subjectSelect.value = "index2.html";
     } else {
-        window.location.href = "index2.html";  // DLCD
+        subjectSelect.value = "index.html";
     }
+
+    // Direct subject change
+    subjectSelect.addEventListener("change", () => {
+        if (subjectSelect.value) {
+            window.location.href = subjectSelect.value;
+        }
+    });
 });
 
 /* ---------------------------------------------------------
    READY
 --------------------------------------------------------- */
 console.info("DM Notes fully loaded ✔");
+
